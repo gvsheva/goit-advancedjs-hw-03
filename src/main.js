@@ -42,6 +42,7 @@ form.addEventListener('submit', event => {
       if (hits.length === 0) {
         iziToast.info({
           title: 'Info',
+          message: 'No images found!',
         });
         return;
       }
@@ -51,6 +52,7 @@ form.addEventListener('submit', event => {
       lightbox.refresh();
     })
     .catch(err => {
+      console.log(err);
       iziToast.error({
         title: 'Error',
         message: err,

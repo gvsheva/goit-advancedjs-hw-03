@@ -1,5 +1,7 @@
 'use strict';
 
+import axios from 'axios';
+
 export default function makeSearchRequest({
   key,
   q,
@@ -7,19 +9,17 @@ export default function makeSearchRequest({
   orientation = 'horizontal',
   safesearch = true,
 }) {
-  return fetch(
-    'https://pixabay.com/api/?' +
-      new URLSearchParams({
+  return axios
+    .get('https://pixabay.com/api/', {
+      params: {
         key,
         q,
         image_type: type,
         orientation,
         safesearch,
-      }).toString()
-  ).then(response => {
-    if (response.ok) {
-      return response.json();
-    }
-    return Promise.reject(new Error(`No results were found for ${q}`));
-  });
+      },
+    })
+    .then(response => {
+      return response.data;
+    });
 }

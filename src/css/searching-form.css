@@ -1,4 +1,4 @@
-.searching-form {
+.form {
   margin: 2rem auto;
   padding: 1.5rem;
   border-radius: 12px;
@@ -17,8 +17,8 @@
   gap: 0.25rem;
 }
 
-.searching-form input[type='text'],
-.searching-form select {
+.form input[type='text'],
+.form select {
   padding: 0.6rem;
   font-size: 1rem;
   border: 1px solid #ccc;
@@ -26,7 +26,7 @@
   transition: border-color 0.2s;
 }
 
-.searching-form button {
+.form button {
   padding: 0.6rem 1.2rem;
   font-size: 1rem;
   background-color: #0077ff;
